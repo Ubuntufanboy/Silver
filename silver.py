@@ -18,6 +18,9 @@ def is_file(job):
 while True:
     command = input("silver>>>  ")
 
+
+# PLEASE FIX LINE 24！ WE NEED A BETTER WAY TO PARSE COMMANDS #
+
     jobs = command.split()
 
 
