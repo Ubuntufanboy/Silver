@@ -1,2 +1,4 @@
 # Silver
- programming language geared for sound operations
+
+Silver is a library meant for controlling sound
+
