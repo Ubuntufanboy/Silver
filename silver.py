@@ -38,8 +38,8 @@ class Silver:
         Silver.play(Silver.rec[-1])
     
     def layer(file, times):
-        if times < 5:
-            print("This will be very loud...")
+        if times > 5:
+            print("This will be very loud... *press enter*")
             input()
             warning = input("Are you sure u wanna do this? y/n")
             if warning == "y":
@@ -50,7 +50,10 @@ class Silver:
             else:
                 print("Abort")
                 
-    
+        else:
+            for i in range(times):
+                Silver.play(file)
+                
     def layer_kill(times):
         for i in range(times):
             Silver.stop()
