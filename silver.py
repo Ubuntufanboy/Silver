@@ -1,5 +1,10 @@
+import logging
 class Silver:
     rec = []
+    def verbose():
+        import logging
+        logging.basicConfig(level=logging.DEBUG)
+    
     def play(file):
         import playsound
         Silver.rec.append(file)
@@ -11,9 +16,10 @@ class Silver:
         playing.start()
     
     def stop():
+        import logging
         from multiprocessing import Process
         try:
-            if playing == 1:
+            if playing:
                 pass
             exists = True
         
@@ -25,35 +31,25 @@ class Silver:
             
             if playing.is_alive():
                 playing.terminate()
-                print("Audio stopped!")
+                logging.info("Audio stopped!")
             
             else:
-                print("No audio is playing...")
+                logging.warning("No audio is playing...")
         
         
         else:
-            print("No audio is playing")
+            logging.warning("No audio is playing")
+    
     def restart():
+        logging.debug("Restart function called!")
         Silver.stop()
         Silver.play(Silver.rec[-1])
     
     def layer(file, times):
-        if times > 5:
-            print("This will be very loud... *press enter*")
-            input()
-            warning = input("Are you sure u wanna do this? y/n")
-            if warning == "y":
-
-
-                for i in range(times):
-                    Silver.play(file)
-            else:
-                print("Abort")
-                
-        else:
-            for i in range(times):
-                Silver.play(file)
-                
+        logging.info(f"Function is layering {times} times.")
+        for i in range(times):
+            Silver.play(file)
+            
     def layer_kill(times):
         for i in range(times):
             Silver.stop()
