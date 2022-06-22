@@ -37,7 +37,7 @@ Silver.stop() # This will stop the file at it's 2 second mark
 Silver.verbose()
 
 # Layer 2 files on top of eachother
-Silver.layer(file_path)
+Silver.layer(file_path, 2)
 
 # Stop all the layers
 sleep(5)
