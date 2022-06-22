@@ -20,3 +20,32 @@ This project was made to have full control over all sound. This includes, record
 4. Code may (or may not) be merged
 
 Thank you for reading!
+
+
+## Some Examples!
+
+```
+from silver import Silver # Import
+from time import sleep # Good for timing things
+
+# Play a sound file
+Silver.play(file_path)
+sleep(2)
+Silver.stop() # This will stop the file at it's 2 second mark
+
+# If you want more logging output run the verbose fuction
+Silver.verbose()
+
+# Layer 2 files on top of eachother
+Silver.layer(file_path)
+
+# Stop all the layers
+sleep(5)
+Silver.layer_kill(2) #This doesent work. I am aware and am trying to fix it
+
+# Let's use the restart function
+Silver.play(file_path)
+sleep(120)
+Silver.restart()
+
+```
